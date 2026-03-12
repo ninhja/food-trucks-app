@@ -6,18 +6,20 @@
 
 ## Overview
 
-| Resource  | Method | Endpoint | Description |
-| --------- | ------ | -------- | ----------- |
-| `food_trucks` | GET | `/get-all-food-trucks` | Retrieves all food trucks from the database. |
-| `food_trucks` | GET | `/get-food-truck-by-id/:id` | Retrieves one food truck by its id number. |
-| `food_trucks` | GET | `/get-vegan-food-trucks` | Retrieves all food trucks that offer vegan options. |
-| `food_trucks` | GET | `/get-food-trucks-by-price/:price` | Retrieves food trucks that match a specific price level. |
-| `food_trucks` | GET | `/get-top-rated-food-trucks` | Retrieves food trucks with rating 4.5 or higher. |
-| `food_trucks` | GET | `/get-food-trucks-sorted-by-rating` | Retrieves food trucks sorted by rating (highest first). |
-| `food_trucks` | POST | `/add-one-food-truck` | Adds a new food truck to the database. |
-| `food_trucks` | POST | `/delete-one-food-truck/:id` | Deletes one food truck by its id number. |
-| `food_trucks` | POST | `/update-food-truck-location` | Updates the location of a food truck. |
-| `food_trucks` | POST | `/update-food-truck-rating` | Updates the rating of a food truck. |
+| Number | Resource  | Method | Endpoint | Description | Assigned to |
+| ------ | --------- | ------ | -------- | ----------- | ----------- |
+| 1 | `food_trucks` | GET | `/get-all-food-trucks` | Retrieves all food trucks from the database. | |
+| 2 | `food_trucks` | GET | `/get-food-truck-by-id/:id` | Retrieves one food truck by its id number. | Ainslie |
+| 3 | `food_trucks` | GET | `/get-vegan-food-trucks` | Retrieves all food trucks that offer vegan options. | Babz |
+| 4 | `food_trucks` | GET | `/get-food-trucks-by-price/:price` | Retrieves food trucks that match a specific price level. | Haine |
+| 5 | `food_trucks` | GET | `/get-top-rated-food-trucks` | Retrieves food trucks with rating 4.5 or higher. | Jackie |
+| 6 | `food_trucks` | GET | `/get-food-trucks-sorted-by-rating` | Retrieves food trucks sorted by rating (highest first). | Jenny |
+| 7 | `food_trucks` | GET | `/get-food-trucks-sorted-by-price` | Retrieves food trucks sorted by price (lowest first). | Megan |
+| 8 | `food_trucks` | GET | `/get-food-trucks-count` | Retrieves the total number of food trucks in the database. | Mimi |
+| 9 | `food_trucks` | POST | `/add-one-food-truck` | Adds a new food truck to the database. | |
+| 10 | `food_trucks` | POST | `/delete-one-food-truck/:id` | Deletes one food truck by its id number. | Priscilla |
+| 11 | `food_trucks` | POST | `/update-food-truck-location` | Updates the location of a food truck. | Stephanie |
+| 12 | `food_trucks` | POST | `/update-food-truck-rating` | Updates the rating of a food truck. | Tee | 
 
 ---
 
@@ -54,9 +56,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-## Food Trucks
-
-### 🔹 GET `/get-all-food-trucks`
+## 🔹 1. GET `/get-all-food-trucks`
 
 **Description:** Retrieves all food trucks stored in the database.
 
@@ -82,7 +82,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🔹 GET `/get-food-truck-by-id/:id`
+## 🔹 2. GET `/get-food-truck-by-id/:id`
 
 **Description:** Retrieves one food truck by its id number.
 
@@ -106,7 +106,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🔹 GET `/get-vegan-food-trucks`
+## 🔹 3. GET `/get-vegan-food-trucks`
 
 **Description:** Retrieves all food trucks that offer vegan options.
 
@@ -132,7 +132,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🌟 GET `/get-food-trucks-by-price/:price`
+## 🔹 4. GET `/get-food-trucks-by-price/:price`
 
 **Description:** Retrieves food trucks that match a specific price level.
 
@@ -158,7 +158,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🌟 GET `/get-top-rated-food-trucks`
+## 🔹 5. GET `/get-top-rated-food-trucks`
 
 **Description:** Retrieves food trucks with rating 4.5 or higher.
 
@@ -184,7 +184,7 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🌟 GET `/get-food-trucks-sorted-by-rating`
+## 🔹 6. GET `/get-food-trucks-sorted-by-rating`
 
 **Description:** Retrieves food trucks sorted by rating from highest to lowest.
 
@@ -210,7 +210,50 @@ INSERT INTO food_trucks (id, name, current_location, daily_special, slogan, has_
 
 ---
 
-### 🔹 POST `/add-one-food-truck`
+## 🔹 7. GET `/get-food-trucks-sorted-by-price`
+
+**Description:** Retrieves food trucks sorted by price (lowest first).
+
+**Example Request URL:**  
+`GET http://localhost:3000/get-food-trucks-sorted-by-price`
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Bert's Beets",
+    "price": 2
+  },
+  {
+    "id": 3,
+    "name": "Wrapscallion",
+    "price": 2
+  }
+]
+```
+
+---
+
+## 🔹 8. GET `/get-food-trucks-sorted-by-rating`
+
+**Description:** Retrieves the total number of food trucks in the database.
+
+**Example Request URL:**  
+`GET http://localhost:3000/get-food-trucks-count`
+
+**Example Response:**
+
+```json
+{
+    "count": 10
+}
+```
+
+---
+
+## 🔹 9. POST `/add-one-food-truck`
 
 **Description:** Adds a new food truck to the database.
 
@@ -237,7 +280,7 @@ Success! Taco Typhoon was added!
 
 ---
 
-### 🔹 POST `/delete-one-food-truck/:id`
+## 🔹 10. POST `/delete-one-food-truck/:id`
 
 **Description:** Deletes one food truck by its id number.
 
@@ -252,7 +295,7 @@ Success! Wrapscallion was deleted!
 
 ---
 
-### 🔹 POST `/update-food-truck-location`
+## 🔹 11. POST `/update-food-truck-location`
 
 **Description:** Updates the location of a food truck.
 
@@ -276,7 +319,7 @@ Success! The food truck location was updated!
 
 ---
 
-### 🔹 POST `/update-food-truck-rating`
+## 🔹 12. POST `/update-food-truck-rating`
 
 **Description:** Updates the rating of a food truck.
 
