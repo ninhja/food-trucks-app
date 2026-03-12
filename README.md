@@ -3,34 +3,18 @@
 We will work as a team of developers to create a Food Trucks App. 
 
 ## **Learning Goals**
-By doing this activity together, we will...
-- Practice making and merging Git branches
+By doing this activity together, we will practice...
+- Making and merging Git branches
 - Submitting, reviewing, and approving Pull Requests
 - Collaborating with a team of developers
 - Building API Endpoints with Node, Express & SQL
 
-## **Workshop Objectives**
-
-1. Understand the concept of **branches** in Git.
-2. Learn to create, switch, and manage branches.
-3. Use GitHub to open and review **pull requests** (PRs).
-
-## **Where we are now**
-
-1. Basic familiarity with Git and GitHub (e.g., cloning, committing, and pushing changes).
-2. Git installed on local machines.
-3. GitHub accounts and access to a shared repository.
-4. A code editor (e.g., VS Code).
 
 ## Resources
 
-1. [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
-2. [GitHub flow - GitHub Docs](https://docs.github.com/en/get-started/using-github/github-flow)
-3. [Learn Git Branching Interactive Tutorial](https://learngitbranching.js.org/)
-4. [Github Skills](https://skills.github.com/)
-5. [Git and Github Learning Resources](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
-6. [Pluralsight course: Git Real](https://app.pluralsight.com/library/courses/code-school-git-real/table-of-contents)
-7. [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+1. [Learn Git Branching Interactive Tutorial](https://learngitbranching.js.org/)
+2. [Github Skills](https://skills.github.com/)
+3. [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
 ---
 
@@ -81,13 +65,16 @@ By doing this activity together, we will...
 
 ### 3. Edit the SQL-cheatsheet.md file in your `new-feature` branch
 
-1. You have been assigned a PostgreSQL clause in the SQL-cheatsheet.md file. This file is written in Markdown, which is a markup language used to create formatted text. Write a description of what the SQL clause does, and provide example SQL code demonstrating how you'd use this clause. 
+1. You have been assigned an API endpoint. Your task is to:
+      1. Complete the API endpoint (with either `app.get()` or `app.post()`
+      2. Complete its helper function
+      3. Test it in Postman and confirm it works according to the API documentation. 
 
 2. Once you have completed your new feature locally, commit your changes and push to your branch.
     
     ```bash
     git add .
-    git commit -m "Added SQL clause definition and example code to SQL-cheatsheet.md"
+    git commit -m "Added my assigned API endpoint and helper function, which I tested and confirmed it worked"
     git push origin new-feature
     ```
 
