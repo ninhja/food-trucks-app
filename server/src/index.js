@@ -43,7 +43,7 @@ async function getAllFoodTrucks() {
 
 // 8. getFoodTrucksCount()
 
-// 9. addOneFoodTruck(...)
+// 9. addOneFoodTruck(name, current_location, daily_special, slogan, has_vegan_options, price_level, rating)
 async function addOneFoodTruck(
   name,
   current_location,
