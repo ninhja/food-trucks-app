@@ -74,6 +74,33 @@ async function addOneFoodTruck(
 
 // 10. deleteOneFoodTruck(id)
 
+async function deleteOneFoodTruck(id) {
+
+  // We've passed in an id value from the url which we use to query the server which then loads the data into the 'truckName' variable. This lets me create a more user-centric result.
+  // '$1' is a dynamic value loaded with the value of the first item in our array, [id].
+    const truckName = await db.query(
+        `SELECT name FROM food_trucks WHERE id = $1`, [id]
+    );
+
+  // Small error handling in case the truck has either already been deleted or did not exist in the first place.
+    if (truckName.rows.length === 0) {
+        return `No truck found with id ${id}, or name ${truckName}`;
+    }
+
+  // This runs only once when we run the function and is the main line of code that actually carries out the deletion of the food truck.
+    await db.query(
+        `DELETE FROM food_trucks WHERE id = $1`, [id]
+  );
+  
+  const name = truckName.rows[0].name;
+
+  // Both the console log and the return are merely there to return a confirmation to the user and us. 
+    console.log(`Success! Food truck #${id}, ${name} was deleted!`);
+
+    return `Success! Food truck #${id}, ${name} was deleted!`;
+
+};
+
 // 11. updateFoodTruckLocation(id, newLocation)
 
 // 12. updateFoodTruckRating(id, newRating)
@@ -129,6 +156,28 @@ app.post("/add-one-food-truck", async (req, res) => {
 
 // 10. POST /delete-one-food-truck/:id
 
+// Priscilla's Code
+
+app.post('/delete-one-food-truck/:id', async (req, res) => {
+
+    try {
+
+      // Creates a variable from the ':id' entered in the url.
+        let id = req.params.id;
+
+      // Here, a reply will 
+        const result = await deleteOneFoodTruck(id);
+
+        res.send(result);
+    
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            error: 'There was an issue while deleting the food truck. Please review your request and try again'
+        })
+    }
+
+});
 // 11. POST /update-food-truck-location
 
 // 12. POST /update-food-truck-rating
